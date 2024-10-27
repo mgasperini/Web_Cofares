@@ -1,7 +1,16 @@
+:root {
+    --color_secundario: "#183657";
+    --color_primario: "#ffffff";
+    --color_detalles:"#ff1e70";
+    --color_detalles_secundario: "#14d5aa";
+    --color_fondo_secundario:"#e2e6e9"
+}
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
 }
+
 
 form {
     margin-top: 50px;
@@ -34,4 +43,12 @@ img {
     width: 100px;
     height: 100px;
     object-fit: cover;
+}
+
+h2 {
+    color: var(--color_primario);
+}
+
+p {
+    color: var(--color_primario);
 }
