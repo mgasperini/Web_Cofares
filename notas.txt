@@ -1,0 +1,11 @@
+Hay que autenticarse con el SDK de gcloud 
+Se utiliza para evitar el uso de keys en la conexion con gcloud
+
+    gcloud auth application-default login
+
+    gcloud auth application-default set-quota-project dataton-2024-team-01-cofares
+
+    gcloud config set billing/quota_project dataton-2024-team-01-cofares
+
+
+el archivo venv contiene el nombre del proyecto (GOOGLE_CLOUD_PROJECT="dataton-2024-team-01-cofares")
