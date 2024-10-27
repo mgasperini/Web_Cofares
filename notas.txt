@@ -8,4 +8,4 @@ Se utiliza para evitar el uso de keys en la conexion con gcloud
     gcloud config set billing/quota_project dataton-2024-team-01-cofares
 
 
-el archivo venv contiene el nombre del proyecto (GOOGLE_CLOUD_PROJECT="dataton-2024-team-01-cofares")
+el archivo .env contiene el nombre del proyecto (GOOGLE_CLOUD_PROJECT="dataton-2024-team-01-cofares")
