@@ -26,6 +26,8 @@ li {
     margin: 20px;
     padding: 20px;
     text-align: left;
+    overflow-y: scroll;
+    max-height: 70px;
 }
 
 img {
