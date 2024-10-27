@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+form {
+    margin-top: 50px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 300px;
+}
+
+button {
+    padding: 10px 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    border: 1px solid #ddd;
+    margin: 20px;
+    padding: 20px;
+    text-align: left;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}

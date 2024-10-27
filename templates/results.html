@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Resultados</h1>
+    <ul>
+        {% for product in products %}
+            <li>
+                <img src="{{ product.imagen_url }}" alt="{{ product.nombre }}">
+                <h2>{{ product.nombre }}</h2>
+                <p>{{ product.descripcion }}</p>
+                <p><strong>Modo de implementacion:</strong> {{ product.modo_implementacion }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Volver a la búsqueda</a>
+</body>
+</html>
