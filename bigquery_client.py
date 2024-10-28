@@ -15,7 +15,7 @@ def get_products(prompt):
         ml_generate_embedding_result AS query_embedding
       FROM
         ML.GENERATE_EMBEDDING(
-          MODEL `dataton-2024-team-01-cofares.datos_cofares.text_embedding`,
+          MODEL `dataton-2024-team-01-cofares.datos_cofares.text_gecko`,
           (SELECT @prompt AS content),  -- Aquí usamos el parámetro
           STRUCT(TRUE AS flatten_json_output, 'RETRIEVAL_QUERY' AS task_type)
         )
