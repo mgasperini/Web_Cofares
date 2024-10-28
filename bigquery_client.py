@@ -21,11 +21,11 @@ def get_products(prompt):
         )
     )
     SELECT
-      d.material_final AS nombre,
-      JSON_EXTRACT_SCALAR(d.informacion_producto, "$.txt_mas_informacion_del_producto") AS descripcion,
-      JSON_EXTRACT_SCALAR(d.informacion_producto, "$.txt_instrucciones_de_uso") AS modo_implementacion,
+      d.nombre_completo_material AS nombre,
+      d.txt_mas_informacion_del_producto AS descripcion,
+      d.txt_instrucciones_de_uso AS modo_implementacion,
       d.codigo_web,
-      d.URI_primera_img,
+      d.URI_primera_imagen,
       d.codigo_nacional,
       ML.DISTANCE(
         qe.query_embedding,
@@ -33,10 +33,10 @@ def get_products(prompt):
         'COSINE'
       ) AS distance_to_query
     FROM
-      `dataton-2024-team-01-cofares.datos_cofares.data` AS d
+      `dataton-2024-team-01-cofares.datos_cofares.data_final_temp` AS d
     INNER JOIN
-      `dataton-2024-team-01-cofares.datos_cofares.SalidaEmbeddings_test` AS e
-      ON d.codigo_web = e.codigo_web
+      `dataton-2024-team-01-cofares.datos_cofares.SalidaEmbeddings_temp` AS e
+      ON d.codigo_web = e.title
     INNER JOIN QueryEmbedding AS qe
       ON TRUE
     ORDER BY
@@ -66,7 +66,7 @@ def get_products(prompt):
 
 
         # Cambia la URL si es necesario
-        imagen_url = row.URI_primera_img 
+        imagen_url = row.URI_primera_imagen 
         if imagen_url and imagen_url.startswith('gs:/'):
             imagen_url = imagen_url.replace('gs://dataton-2024-team-01-cofares-datastore/imagenes/', 'https://storage.googleapis.com/dataton-2024-team-01-cofares-datastore/imagenes/reto_cofares/')
         products.append({
